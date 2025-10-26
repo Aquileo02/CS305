@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suppressions xmlns="https://jeremylong.github.io/DependencyCheck/dependency-suppression.1.3.xsd">
+    <!-- False Positive: BouncyCastle CVE-2015-7940 not applicable to this project -->
+    <suppress>
+        <notes>
+            This suppression addresses CVE-2015-7940 (Invalid Curve Attack)
+            in BouncyCastle before version 1.51.
+            The rest-service project does not perform ECDH key exchanges or use
+            BouncyCastle directly, so this vulnerability cannot be exploited.
+        </notes>
+        <packageUrl regex="true">.*bcprov-jdk15on.*</packageUrl>
+        <cve>CVE-2015-7940</cve>
+    </suppress>
+</suppressions>
